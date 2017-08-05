@@ -38,6 +38,13 @@ $('document').ready(function () {
         sendToServer(sendIt);
     });
 
+    $('body').on('click', '#resetIt', function () {
+        $('#numberOne').val('');
+        $('#numberTwo').val('');
+         $('#resultGoesHere').text('');
+
+    })
+
     function sendToServer(sendIt) {
         $.ajax({
             method: 'POST',
@@ -63,8 +70,8 @@ $('document').ready(function () {
     }
 
     function displayResult() {
-       $('#resultGoesHere').text(sentBack.result);
-        
+        $('#resultGoesHere').text(sentBack.result);
+
     }
 
 

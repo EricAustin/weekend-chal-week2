@@ -3,11 +3,32 @@ body {
 }
 
 button {
-    border-width: 3px;
+    border-width: 5px;
     border-style: ridge;
-    border-radius: 15px;
+    height: 75px;
+    display: inline-block;
+}
+
+#add {
+    border-radius: 10px 50px 10px 50px;
+}
+#subtract {
+    border-radius: 10px 50px 10px 50px;
+}
+#multiply {
+    border-radius: 10px 50px 10px 50px;
+}
+#divide {
+    border-radius: 25px 50px 50px 25px;
+}
+#resetIt {
+    border-radius: 50px 10px 50px 10px
 }
 
 input {
     border-radius: 3px;
+}
+
+#resultGoesHere {
+    font-size: 100%;
 }
