@@ -1,4 +1,4 @@
-console.log('client.js sourced')
+// console.log('client.js sourced')
 
 var sendIt = {}
 var sentBack = {}
@@ -10,7 +10,7 @@ var operationButtonsArray = [{ name: '+', id: 'add' }, { name: '-', id: 'subtrac
 
 function setLastFocus(focus) {
     lastFocus = focus;
-    console.log('lastFocus set to:', lastFocus);
+    // console.log('lastFocus set to:', lastFocus);
 };
 
 
@@ -21,7 +21,7 @@ function sendToServer(sendIt) {
         url: '/doMath',
         data: sendIt,
         success: function (response) {
-            console.log(sendIt, 'sent to server');
+            // console.log(sendIt, 'sent to server');
             // returnFocus();
             getResult();
         }
@@ -33,7 +33,7 @@ function getResult() {
         method: 'GET',
         url: '/doMath',
         success: function (response) {
-            console.log('response from server is:', response);
+            // console.log('response from server is:', response);
             sentBack = response;
             displayResult();
         }
@@ -41,60 +41,38 @@ function getResult() {
 };
 
 function displayResult() {
+    // console.log('displayResult hit');
+    
     $('#resultGoesHere').text(sentBack.result);
 
 }
 
 
 $('document').ready(function () {
-    console.log('jquery sourced');
+    // console.log('jquery sourced');
 
     for (var i = 0; i < inputFieldsArray.length; i++) {
         $('#inputFieldsLocation').append('<input onfocus=setLastFocus(this.id) id=' + inputFieldsArray[i].id + ' placeholder="' + inputFieldsArray[i].name + '">');
     }
-
+    $('#operandOne').focus();
     for (var i = 0; i < 10; i++) {
         $('#numberButtonsLocation').append('<button class="numButton" id='+i+'>' + i + '</button>');
 
     }
     for (var i = 0; i < operationButtonsArray.length; i++) {
-        $('#operationButtonsLocation').append('<button id=' + operationButtonsArray[i].id + '>' + operationButtonsArray[i].name + '</button>');
+        $('#operationButtonsLocation').append('<button class="operationButton" id=' + operationButtonsArray[i].id + '>' + operationButtonsArray[i].name + '</button>');
 
     }
 
-    $('body').on('click', '#add', function () {
+    $('.operationButton').on('click', function () {
         sendIt.operandOne = $('#operandOne').val();
         sendIt.operandTwo = $('#operandTwo').val();
-        sendIt.operation = "add";
-        console.log('addition clicked, array value is:', sendIt);
+        // console.log(this.id);
+        sendIt.operation = this.id;
         sendToServer(sendIt);
     });
 
-    $('body').on('click', '#subtract', function () {
-        sendIt.operandOne = $('#operandOne').val();
-        sendIt.operandTwo = $('#operandTwo').val();
-        sendIt.operation = "subtract";
-        console.log('subtraction clicked, array value is:', sendIt);
-        sendToServer(sendIt);
-    });
-
-    $('body').on('click', '#multiply', function () {
-        sendIt.operandOne = $('#operandOne').val();
-        sendIt.operandTwo = $('#operandTwo').val();
-        sendIt.operation = "multiply";
-        console.log('multiplication clicked, array value is:', sendIt);
-        sendToServer(sendIt);
-    });
-
-    $('body').on('click', '#divide', function () {
-        sendIt.operandOne = $('#operandOne').val();
-        sendIt.operandTwo = $('#operandTwo').val();
-        sendIt.operation = "divide";
-        console.log('division clicked, array value is:', sendIt);
-        sendToServer(sendIt);
-    });
-
-    $('body').on('click', '#resetIt', function () {
+    $('#resetIt').on('click', function () {
         $('#operandOne').val('');
         $('#operandTwo').val('');
         $('#resultGoesHere').text('');
@@ -107,9 +85,9 @@ $('document').ready(function () {
     });
 
     $('body').on('click', '.numButton', function() {
-        console.log('numButton clicked');
-        console.log($('#'+lastFocus))
-        console.log(this.id);
+        // console.log('numButton clicked');
+        // console.log($('#'+lastFocus))
+        // console.log(this.id);
         newValue= $('#'+lastFocus).val() + this.id;
         $('#'+lastFocus).val(newValue);
     });
