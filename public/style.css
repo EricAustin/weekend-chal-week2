@@ -5,11 +5,17 @@ body {
 button {
     border-width: 5px;
     border-style: ridge;
+    width: 75px;
     height: 75px;
     display: inline-block;
+    border-radius: 5px;
 }
 
-#add {
+input {
+    width: 400px;
+}
+
+/* #add {
     border-radius: 10px 50px 10px 50px;
 }
 #subtract {
@@ -23,7 +29,7 @@ button {
 }
 #resetIt {
     border-radius: 50px 10px 50px 10px
-}
+} */
 
 input {
     border-radius: 3px;

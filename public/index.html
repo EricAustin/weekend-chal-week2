@@ -2,70 +2,34 @@
 
 <head>
     <title>The amazing calculator of DOOM</title>
+    
+    <!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCuHwjA0LlceamrrEouWxzHQ1dff2hd3FY",
+            authDomain: "primeweekend2.firebaseapp.com",
+            databaseURL: "https://primeweekend2.firebaseio.com",
+            projectId: "primeweekend2",
+            storageBucket: "primeweekend2.appspot.com",
+            messagingSenderId: "335015557072"
+        };
+        firebase.initializeApp(config); -->
+
+    </script>
     <script src='jquery-3.2.1.min.js'></script>
     <script src='client.js'></script>
-    <link rel='stylesheet' href='style.css'>
-    <link rel='stylesheet' href='w3.css'>
+     <link rel='stylesheet' href='style.css'>
+    <!-- <link rel='stylesheet' href='w3.css'>  -->
 </head>
 
 <body>
-    <div class='w3-row-padding w3-padding-16'>
-        <input type='number' id='numberOne' class="w3-col s6">
-    </div>
-
-    <div class='w3-row-padding w3-padding-16'>
-        <div class='w3-half s3'>
-            <p></p>
-        </div>
-        <input type='number' id='numberTwo' class="w3-col s6">
-    </div>
-
-
-
-
-    <div class='w3-row'>
-        <div class='w3-col s1'>
-            <p></p>
-        </div>
-        <button id='add' class='w3-col s4 w3-red'>ADDITION!</button>
-    </div>
-
-    <div class='w3-row'>
-        <div class='w3-col s3'>
-            <p></p>
-        </div>
-        <button id='subtract' class='w3-col s4 w3-orange'>SUBTRACTION!</button>
-    </div>
-
-    <div class='w3-row'>
-        <div class='w3-col s5'>
-            <p></p>
-        </div>
-
-        <button id='multiply' class='w3-col s4 w3-yellow'>MULTIPLICATION!</button>
-    </div>
-
-    <div class='w3-row'>
-        <div class='w3-col s1'>
-            <p id="resultGoesHere"></p>
-        </div>
-
-
-        <div class='w3-col s7'>
-            <p></p>
-        </div>
-        <button id='divide' class='w3-col s4 w3-green'>DIVISION!</button>
-    </div>
-
-    <div class='w3-row'>
-        <div class='w3-col s5'>
-            <p></p>
-        </div>
-        <button id='resetIt' class='w3-col s4 w3-blue'>Reset It!</button>
-    </div>
-
-
-
+    <br>
+    <div id="inputFieldsLocation"></div>
+    <br>
+    <div id="numberButtonsLocation"></div>
+    <br>
+    <div id="operationButtonsLocation"></div>
 </body>
 
 </html>
