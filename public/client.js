@@ -16,13 +16,14 @@ function setLastFocus(focus) {
 
 
 function sendToServer(sendIt) {
+    // console.log('sendToServerHit')
     $.ajax({
         method: 'POST',
         url: '/doMath',
         data: sendIt,
         success: function (response) {
             // console.log(sendIt, 'sent to server');
-            // returnFocus();
+            $('#' + lastFocus).focus();
             getResult();
         }
     })
@@ -42,8 +43,7 @@ function getResult() {
 
 function displayResult() {
     // console.log('displayResult hit');
-    
-    $('#resultGoesHere').text(sentBack.result);
+    $('#resultGoesHere').html('<strong>'+sentBack.result+'</strong');
 
 }
 
@@ -52,15 +52,20 @@ $('document').ready(function () {
     // console.log('jquery sourced');
 
     for (var i = 0; i < inputFieldsArray.length; i++) {
-        $('#inputFieldsLocation').append('<input onfocus=setLastFocus(this.id) id=' + inputFieldsArray[i].id + ' placeholder="' + inputFieldsArray[i].name + '">');
+        $('#inputFieldsLocation').append('<input type="number" onfocus=setLastFocus(this.id) class="w3-col s5" id=' + inputFieldsArray[i].id + ' placeholder="' + inputFieldsArray[i].name + '">');
     }
-    $('#operandOne').focus();
-    for (var i = 0; i < 10; i++) {
-        $('#numberButtonsLocation').append('<button class="numButton" id='+i+'>' + i + '</button>');
 
-    }
+    $('#operandOne').focus();
+
+    for (var i = 0; i < 10; i++) {
+        $('#numberButtonsLocation').append('<button class="numButton w3-col s1" id=' + i + '>' + i + '</button>');
+    };
+
+    $('#numberButtonsLocation :nth-child(4)').append('</div><div class="w3-row">');
+
+
     for (var i = 0; i < operationButtonsArray.length; i++) {
-        $('#operationButtonsLocation').append('<button class="operationButton" id=' + operationButtonsArray[i].id + '>' + operationButtonsArray[i].name + '</button>');
+        $('#operationButtonsLocation').append('<button class="operationButton w3-col s2" id=' + operationButtonsArray[i].id + '>' + operationButtonsArray[i].name + '</button>');
 
     }
 
@@ -79,17 +84,17 @@ $('document').ready(function () {
 
     });
 
-    $('body').on('click', 'button', function() {
+    $('body').on('click', 'button', function () {
         $('#' + lastFocus).focus();
 
     });
 
-    $('body').on('click', '.numButton', function() {
+    $('body').on('click', '.numButton', function () {
         // console.log('numButton clicked');
         // console.log($('#'+lastFocus))
         // console.log(this.id);
-        newValue= $('#'+lastFocus).val() + this.id;
-        $('#'+lastFocus).val(newValue);
+        newValue = $('#' + lastFocus).val() + this.id;
+        $('#' + lastFocus).val(newValue);
     });
 
 

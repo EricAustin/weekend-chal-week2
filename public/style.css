@@ -2,45 +2,36 @@ body {
     background-color: lightgrey;
 }
 
-.flex-container {
-    display: flex;
-    background-color: lightgrey;
+input {
+    width: 40%;
+    height: 75px;
+    border-radius: 15px;
+}
+
+button {
+    border-width: 3px;
+    /* border-style: ridge; */
+    border-radius: 10px;
 }
 
 .numButton {
     background-color: cornflowerblue;
-    width: 5%;
-    margin: 1%;
     font-size: 200%;
 }
 
 .operationButton {
     background-color: lightcoral;
-    width: 10%;
-    margin: 10px;
     font-size: 200%;
+}
+
+#resultGoesHere {
+    height: 30px;
+    
 }
 
 #resetIt {
     background-color: cornflowerblue;
-    width: 20%;
-    margin: 1%;
     font-size: 200%;
 }
 
-button {
-    border-width: 5px;
-    border-style: ridge;
-    border-radius: 10px;
-}
 
-input {
-    width: 40%;
-    height: 75px;
-    margin: 10px;
-    font-size: 60px;
-}
-
-input {
-    border-radius: 3px;
-}
