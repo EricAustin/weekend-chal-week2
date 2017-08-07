@@ -2,36 +2,47 @@ body {
     background-color: lightgrey;
 }
 
-input {
+#container {
+    margin: auto;
     width: 40%;
+    border: 5px solid darkgray;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+input {
+    width: 48%;
     height: 75px;
     border-radius: 15px;
+    font-size: 200%
 }
 
 button {
     border-width: 3px;
-    /* border-style: ridge; */
+    height: 75px;
     border-radius: 10px;
+    margin: auto;
 }
 
 .numButton {
-    background-color: cornflowerblue;
+    background-color: lightblue;
+    width: 33%;
     font-size: 200%;
+    margin: auto;
 }
 
 .operationButton {
+    width: 25%;
     background-color: lightcoral;
     font-size: 200%;
 }
 
 #resultGoesHere {
-    height: 30px;
-    
+    width: 98%
 }
 
 #resetIt {
-    background-color: cornflowerblue;
+    background-color: lightblue;
+    width: 100%;
     font-size: 200%;
 }
-
-

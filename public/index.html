@@ -2,7 +2,7 @@
 
 <head>
     <title>The amazing calculator of DOOM</title>
-    
+
     <!-- <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
     <script>
         // Initialize Firebase
@@ -19,23 +19,38 @@
     </script>
     <script src='jquery-3.2.1.min.js'></script>
     <script src='client.js'></script>
-      <link rel='stylesheet' href='style.css'> 
-     <link rel='stylesheet' href='w3.css'>  
+    <link rel='stylesheet' href='style.css'>
+    <!-- <link rel='stylesheet' href='w3.css'> -->
 </head>
 
 <body>
     <div id="container">
-    <br>
-    <div class="w3-row" id="inputFieldsLocation"><p class="w3-col s1"></p></div>
-    <br>
-    <div class="w3-row" id="numberButtonsLocation"><p class="w3-col s1"></p></div>
-    <br>
-    <div class="w3-row" id="operationButtonsLocation"><p class="w3-col s2"></p></div>
-    <br>
-    <div class="w3-center" id="resultGoesHere"></div>
-    <br>
-    <div class="w3-row" id="resetButton"><p class="w3-col s3"></p>
-    <button class ="w3-col s6" id="resetIt">CLR</button></div>
+        <br>
+        <div id="inputFieldsLocation">
+        </div>
+        <br>
+        <input type="text" id="resultGoesHere" disabled>
+        <br>
+        <br>
+        <div id="numberButtonsLocation1">
+        </div>
+        <br>
+        <div id="numberButtonsLocation2">
+        </div>
+        <br>
+        <div id="numberButtonsLocation3">
+        </div>
+        <br>
+        <div id="numberButtonsLocation4">
+
+        </div>
+        <br>
+        <div id="operationButtonsLocation">
+        </div>
+        <br>
+        <div id="resetButton">
+            <button id="resetIt">CLR</button>
+        </div>
     </div>
 </body>
 

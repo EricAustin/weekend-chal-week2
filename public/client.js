@@ -16,7 +16,7 @@ function setLastFocus(focus) {
 
 
 function sendToServer(sendIt) {
-    // console.log('sendToServerHit')
+    console.log('sendToServerHit')
     $.ajax({
         method: 'POST',
         url: '/doMath',
@@ -43,7 +43,7 @@ function getResult() {
 
 function displayResult() {
     // console.log('displayResult hit');
-    $('#resultGoesHere').html('<strong>'+sentBack.result+'</strong');
+    $('#resultGoesHere').val(sentBack.result);
 
 }
 
@@ -52,28 +52,42 @@ $('document').ready(function () {
     // console.log('jquery sourced');
 
     for (var i = 0; i < inputFieldsArray.length; i++) {
-        $('#inputFieldsLocation').append('<input type="number" onfocus=setLastFocus(this.id) class="w3-col s5" id=' + inputFieldsArray[i].id + ' placeholder="' + inputFieldsArray[i].name + '">');
+        $('#inputFieldsLocation').append('<input type="number" onfocus=setLastFocus(this.id) id=' + inputFieldsArray[i].id + ' placeholder="' + inputFieldsArray[i].name + '">');
     }
 
     $('#operandOne').focus();
 
-    for (var i = 0; i < 10; i++) {
-        $('#numberButtonsLocation').append('<button class="numButton w3-col s1" id=' + i + '>' + i + '</button>');
+    for (var i = 1; i <= 3; i++) {
+        $('#numberButtonsLocation1').append('<button class="numButton" id=' + i + '>' + i + '</button>');
+    };
+    for (var i = 4; i <= 6; i++) {
+        $('#numberButtonsLocation2').append('<button class="numButton" id=' + i + '>' + i + '</button>');
     };
 
-    $('#numberButtonsLocation :nth-child(4)').append('</div><div class="w3-row">');
+    for (var i = 7; i <= 9; i++) {
+        $('#numberButtonsLocation3').append('<button class="numButton" id=' + i + '>' + i + '</button>');
+    };
+
+    for (var i = 0; i <= 0; i++) {
+        $('#numberButtonsLocation4').append('<button class="numButton" id=' + i + '>' + i + '</button>');
+    };
+
 
 
     for (var i = 0; i < operationButtonsArray.length; i++) {
-        $('#operationButtonsLocation').append('<button class="operationButton w3-col s2" id=' + operationButtonsArray[i].id + '>' + operationButtonsArray[i].name + '</button>');
+        $('#operationButtonsLocation').append('<button class="operationButton" id=' + operationButtonsArray[i].id + '>' + operationButtonsArray[i].name + '</button>');
 
     }
 
     $('.operationButton').on('click', function () {
         sendIt.operandOne = $('#operandOne').val();
         sendIt.operandTwo = $('#operandTwo').val();
-        // console.log(this.id);
+        console.log('operation click');
         sendIt.operation = this.id;
+        console.log(this.id);
+        
+        console.log(sendIt);
+        
         sendToServer(sendIt);
     });
 
