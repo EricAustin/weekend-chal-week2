@@ -31,6 +31,15 @@ button {
     margin: auto;
 }
 
+#numberButtonsLocation4 {
+    margin-left: 33%;
+    margin-right: 33%;
+}
+
+.buttonZero {
+     width: 98%; 
+}
+
 .operationButton {
     width: 25%;
     background-color: lightcoral;

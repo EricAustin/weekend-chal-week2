@@ -16,7 +16,7 @@ function setLastFocus(focus) {
 
 
 function sendToServer(sendIt) {
-    console.log('sendToServerHit')
+    // console.log('sendToServerHit')
     $.ajax({
         method: 'POST',
         url: '/doMath',
@@ -69,7 +69,7 @@ $('document').ready(function () {
     };
 
     for (var i = 0; i <= 0; i++) {
-        $('#numberButtonsLocation4').append('<button class="numButton" id=' + i + '>' + i + '</button>');
+        $('#numberButtonsLocation4').append('<button class="numButton buttonZero" id=' + i + '>' + i + '</button>');
     };
 
 
@@ -82,11 +82,11 @@ $('document').ready(function () {
     $('.operationButton').on('click', function () {
         sendIt.operandOne = $('#operandOne').val();
         sendIt.operandTwo = $('#operandTwo').val();
-        console.log('operation click');
+        // console.log('operation click');
         sendIt.operation = this.id;
-        console.log(this.id);
+        // console.log(this.id);
         
-        console.log(sendIt);
+        // console.log(sendIt);
         
         sendToServer(sendIt);
     });
