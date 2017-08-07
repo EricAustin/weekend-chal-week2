@@ -14,9 +14,9 @@ input {
     width: 48%;
     height: 75px;
     border-radius: 15px;
-    font-size: 200%
+    font-size: 200%;
+    text-align: right;
 }
-
 button {
     border-width: 3px;
     height: 75px;
