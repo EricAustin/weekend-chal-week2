@@ -94,7 +94,7 @@ $('document').ready(function () {
     $('#resetIt').on('click', function () {
         $('#operandOne').val('');
         $('#operandTwo').val('');
-        $('#resultGoesHere').text('');
+        $('#resultGoesHere').val('');
 
     });
 
